@@ -1,0 +1,56 @@
+﻿@model FutsalApp.Models.Booking
+
+@{
+    ViewData["Title"] = "Delete Booking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Yakin akan delete data Booking ini ?</h3>
+<div>
+    <h4>Delete Booking</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MemberId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MemberId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KaryawanId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KaryawanId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TanggalBooking)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TanggalBooking)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DurasiBooking)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DurasiBooking)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TanggalDibuat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TanggalDibuat)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DibuatOleh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DibuatOleh)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

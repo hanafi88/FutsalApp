@@ -1,0 +1,61 @@
+﻿@model IEnumerable<FutsalApp.Models.Booking>
+
+@{
+    ViewData["Title"] = "Booking List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Booking List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Member)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Karyawan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lapangan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TanggalBooking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DurasiBooking)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Member)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Karyawan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lapangan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TanggalBooking)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DurasiBooking)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p style="margin-top: 10px;">
+    <a asp-action="Create" class="btn btn-primary" style="font-color: white">Tambah Baru</a>
+</p>
